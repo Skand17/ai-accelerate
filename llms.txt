@@ -6,6 +6,7 @@ Key facts:
 - Flagship offer: MVP development in a fixed 15-day sprint (scoping → design → build → launch)
 - Static business websites: live in 5–7 days, hosting $0–5/month, from $600
 - Dynamic builds: e-commerce ($2,000–$7,000), education platforms with video lessons and PDF libraries ($2,500–$8,000), custom web apps and portals
+- Data engineering & BI: Power BI and Tableau dashboards, ETL/ELT pipelines, and cloud data warehouses on AWS, Azure, or GCP (Redshift, Synapse, BigQuery, Snowflake)
 - Technology: React + TypeScript + Tailwind frontends; Node.js or Python (FastAPI) backends; PostgreSQL; Vercel/Netlify/Cloudflare for static hosting, AWS/GCP for dynamic
 - SEO service covers both Google rankings and AI-assistant visibility (structured data, llms.txt, answer-engine optimization)
 - Contact: Abhishekmis0201@gmail.com — replies within 24 hours, free 30-minute consultation
