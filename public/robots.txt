@@ -30,4 +30,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://synaptro.ai/sitemap.xml
+Sitemap: https://synaptro.in/sitemap.xml

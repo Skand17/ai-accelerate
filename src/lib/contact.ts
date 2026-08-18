@@ -8,8 +8,6 @@ export interface LeadPayload {
   service?: string;
   budget?: string;
   message: string;
-  /** Honeypot — must stay empty. Bots that fill it are silently dropped. */
-  botField?: string;
   /** Where on the site the lead came from (e.g. "home-cta", "contact-page"). */
   source: string;
 }
@@ -24,9 +22,6 @@ const FORMSPREE_ID = (import.meta.env.VITE_FORMSPREE_ID as string | undefined) ?
 const CUSTOM_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
 
 export async function submitLead(payload: LeadPayload): Promise<void> {
-  // Honeypot triggered → pretend success, never send.
-  if (payload.botField) return;
-
   const url = CUSTOM_ENDPOINT ?? `https://formspree.io/f/${FORMSPREE_ID}`;
 
   const body = {
@@ -50,6 +45,13 @@ export async function submitLead(payload: LeadPayload): Promise<void> {
   });
 
   if (!res.ok) {
-    throw new Error(`Form submission failed with status ${res.status}`);
+    let detail = "";
+    try {
+      const data = await res.json();
+      detail = data?.errors?.map((e: { message: string }) => e.message).join("; ") ?? "";
+    } catch {
+      /* non-JSON error body — status alone is enough */
+    }
+    throw new Error(`Form submission failed (${res.status})${detail ? `: ${detail}` : ""}`);
   }
 }

@@ -7,7 +7,7 @@ export const site = {
   name: "Synaptro.AI",
   legalName: "Synaptro.AI",
   tagline: "Engineering Smarter Decisions",
-  url: "https://synaptro.ai",
+  url: "https://synaptro.in",
   email: "Abhishekmis0201@gmail.com",
   /** Optional scheduling link (Calendly/Cal.com). Leave empty to hide "book a call" buttons that need it. */
   bookingUrl: "",
