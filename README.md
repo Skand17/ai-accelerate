@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# Synaptro.AI — Company Website
 
-## Project info
+Marketing site for Synaptro.AI: AI consulting, MVP development in 15 days, static & dynamic
+website development, automation, SEO, and growth services.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Stack:** Vite · React 18 · TypeScript · Tailwind CSS · shadcn/ui · framer-motion · react-router
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev        # local dev server
+npm run build      # production build → dist/
+npm run test       # vitest
+npm run lint       # eslint
 ```
 
-**Edit a file directly in GitHub**
+## Contact form setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The lead form (`src/components/ContactForm.tsx` → `src/lib/contact.ts`) submits to **Formspree**
+form `maewllyl` (`https://formspree.io/f/maewllyl`) as a JSON POST — no server needed. Leads are
+delivered to the inbox configured in the Formspree dashboard, with the visitor's email as
+reply-to and a `source` field showing which page/section the lead came from.
 
-**Use GitHub Codespaces**
+Overrides via `.env` (see `.env.example`):
+- `VITE_FORMSPREE_ID` — use a different Formspree form (e.g. a test form on staging)
+- `VITE_CONTACT_ENDPOINT` — bypass Formspree with any custom JSON POST endpoint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Spam protection: a honeypot field is built in; Formspree adds its own filtering.
+**Verify before launch:** submit a test lead on the live site and confirm it arrives.
 
-## What technologies are used for this project?
+## Where things live
 
-This project is built with:
+| What | Where |
+|---|---|
+| Site name, URL, email, socials | `src/lib/site.ts` |
+| Services (8) | `src/data/services.ts` |
+| Pricing, hosting costs, maintenance plans | `src/data/pricing.ts` |
+| Blog posts | `src/data/blog.ts` |
+| Per-page SEO tags + JSON-LD | `src/components/Seo.tsx` (used by every page) |
+| Theme (light/dark design tokens) | `src/index.css` (light = `:root`, dark = `.dark`) |
+| Sitemap / robots / llms.txt | `public/` — update `sitemap.xml` when adding pages/posts |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## SEO checklist maintained in this repo
 
-## How can I deploy this project?
+- Per-page `<title>`, meta description, canonical, Open Graph & Twitter tags (SPA-managed)
+- JSON-LD: Organization, WebSite, Service list, FAQPage, BlogPosting, BreadcrumbList
+- `public/sitemap.xml`, `public/robots.txt` (AI crawlers explicitly allowed), `public/llms.txt`
+- SPA fallbacks for hosting: `vercel.json` (Vercel) and `public/_redirects` (Netlify/Cloudflare)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Before launch
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- [ ] Replace `public/og-image.png` with a real 1200×630 social share image (currently the logo)
+- [ ] Set real social profile URLs in `src/lib/site.ts`
+- [ ] Send a test lead end-to-end and confirm it arrives in the Formspree inbox
+- [ ] Adjust pricing ranges/currency in `src/data/pricing.ts` for your market
+- [ ] Add real client testimonials in `src/components/Testimonials.tsx` (section is ready, quotes intentionally omitted until real ones exist)
+- [ ] Submit `sitemap.xml` in Google Search Console + Bing Webmaster Tools
+- [ ] Consider prerendering/SSG (e.g. `vite-plugin-ssr`/prerender step) for even stronger SEO — meta tags are JS-managed today, which Google handles but slower crawlers may not

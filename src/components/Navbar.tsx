@@ -3,11 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import synaptroLogo from "@/assets/synaptro-logo.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Logo } from "@/components/Logo";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
+  { name: "Pricing", path: "/pricing" },
+  { name: "Blog", path: "/blog" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -37,11 +40,7 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <img 
-            src={synaptroLogo} 
-            alt="Synaptro.AI Logo" 
-            className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-          />
+          <Logo className="h-9 sm:h-10 transition-transform duration-300 group-hover:scale-105" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -61,23 +60,24 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant="heroOutline" size="sm" asChild>
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <Button variant="glow" size="sm" asChild>
             <Link to="/contact">Book Free Consultation</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -105,9 +105,6 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="heroOutline" asChild>
-                  <Link to="/contact">Get in Touch</Link>
-                </Button>
                 <Button variant="glow" asChild>
                   <Link to="/contact">Book Free Consultation</Link>
                 </Button>

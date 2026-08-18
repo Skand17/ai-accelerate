@@ -1,25 +1,24 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import synaptroLogo from "@/assets/synaptro-logo.png";
+import { Logo } from "@/components/Logo";
+import { site } from "@/lib/site";
 
 const footerLinks = {
   services: [
+    { name: "MVP in 15 Days", href: "/services#mvp-development" },
+    { name: "Static Websites", href: "/services/static-website-development" },
+    { name: "Dynamic Websites & Web Apps", href: "/services/dynamic-website-development" },
     { name: "AI Consulting", href: "/services#ai-consulting" },
-    { name: "MVP Development", href: "/services#mvp-development" },
-    { name: "Cloud & DevOps", href: "/services#cloud-devops" },
-    { name: "AI SEO", href: "/services#ai-seo" },
+    { name: "Automation & AI Agents", href: "/services#automation" },
+    { name: "AI SEO & LLM Visibility", href: "/services#ai-seo" },
     { name: "Digital Marketing", href: "/services#digital-marketing" },
-    { name: "Automation", href: "/services#automation" },
+    { name: "Cloud & DevOps", href: "/services#cloud-devops" },
   ],
   company: [
     { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
-    { name: "Careers", href: "/careers" },
-  ],
-  social: [
-    { name: "LinkedIn", href: "https://linkedin.com" },
-    { name: "Twitter", href: "https://twitter.com" },
-    { name: "GitHub", href: "https://github.com" },
+    { name: "Pricing", href: "/pricing" },
   ],
 };
 
@@ -31,18 +30,14 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <img 
-                src={synaptroLogo} 
-                alt="Synaptro.AI" 
-                className="h-12 w-auto"
-              />
+              <Logo className="h-12" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Engineering smarter decisions through AI-powered consulting, 
-              development, and growth solutions.
+              {site.tagline}. We build websites, web apps, and AI systems for startups and growing
+              businesses — and the SEO and marketing that make them pay off.
             </p>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Synaptro.AI. All rights reserved.
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
             </p>
           </div>
 
@@ -80,32 +75,17 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Social & Contact */}
+          {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
-            <ul className="space-y-3">
-              {footerLinks.social.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 pt-6 border-t border-border">
-              <a
-                href="mailto:hello@synaptro.ai"
-                className="text-sm text-primary hover:underline"
-              >
-                hello@synaptro.ai
-              </a>
-            </div>
+            <a
+              href={`mailto:${site.email}`}
+              className="inline-flex items-center gap-1 text-sm text-primary hover:underline break-all"
+            >
+              {site.email}
+              <ArrowUpRight className="w-3 h-3 shrink-0" />
+            </a>
+            <p className="mt-3 text-xs text-muted-foreground">{site.location}</p>
           </div>
         </div>
       </div>

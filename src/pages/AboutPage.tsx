@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
-  Target, 
-  Zap, 
-  Shield, 
+import {
+  Target,
+  Zap,
+  Shield,
   Users,
-  ArrowRight
+  ArrowRight,
+  Code2,
+  Mail,
+  MapPin
 } from "lucide-react";
+import abhishekPhoto from "@/assets/abhishek-mishra.jpg";
+import { site } from "@/lib/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -42,8 +48,13 @@ const AboutPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <Seo
+        title="About Us — The Team Behind Synaptro.AI"
+        description="Synaptro.AI is an AI-first consulting and development company. Meet the values and approach behind our websites, web apps, AI systems, and growth services."
+        path="/about"
+      />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 relative">
         <div className="absolute inset-0 hero-gradient" />
@@ -143,15 +154,105 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium text-primary mb-4 block">Our Team</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              The People You'll Work With
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A sales team that speaks business and an engineering team that ships — no layers in
+              between.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+            {/* Sales head */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="p-8 rounded-3xl border-glow card-gradient text-center"
+            >
+              <img
+                src={abhishekPhoto}
+                alt="Abhishek Mishra, Head of Sales at Synaptro"
+                className="w-36 h-36 rounded-full object-cover object-top mx-auto mb-6 ring-4 ring-primary/20"
+              />
+              <h3 className="text-xl font-bold">Abhishek Mishra</h3>
+              <p className="text-primary font-medium mb-2">Head of Sales</p>
+              <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
+                <MapPin className="w-4 h-4" /> India
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                Your first point of contact — from the free consultation through scoping and
+                quoting. Every inquiry lands on his desk and gets a reply within 24 hours.
+              </p>
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline break-all"
+              >
+                <Mail className="w-4 h-4 shrink-0" /> {site.email}
+              </a>
+            </motion.div>
+
+            {/* Engineering team */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="p-8 rounded-3xl border-glow card-gradient flex flex-col justify-center"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto md:mx-0">
+                <Code2 className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-center md:text-left">
+                Engineering Team Across India
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5 text-center md:text-left">
+                Behind every project is a distributed team of senior engineers across India —
+                React and TypeScript specialists, Node.js and Python backend developers, and
+                cloud engineers on AWS and GCP.
+              </p>
+              <ul className="space-y-2.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Users className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  Frontend, backend, cloud & AI specialists on every build
+                </li>
+                <li className="flex items-start gap-2">
+                  <Users className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  The engineers you meet are the engineers who build
+                </li>
+                <li className="flex items-start gap-2">
+                  <Users className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  Overlap-friendly hours for clients worldwide
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* TODO: replace with real, verifiable numbers as they accumulate */}
             {[
-              { value: "50+", label: "Projects Delivered" },
-              { value: "30+", label: "Happy Clients" },
-              { value: "15+", label: "Team Members" },
-              { value: "5", label: "Countries Served" }
+              { value: "15", label: "Days from idea to launched MVP" },
+              { value: "7", label: "Days to a live business website" },
+              { value: "24h", label: "Max response time" },
+              { value: "100%", label: "Code ownership stays with you" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
