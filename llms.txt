@@ -12,21 +12,21 @@ Key facts:
 
 ## Services
 
-- [Services overview](https://synaptro.ai/services): All eight services with deliverables, outcomes, and timelines
-- [Static Website Development](https://synaptro.ai/services/static-website-development): Fast, secure business websites and landing pages, live in 7 days
-- [Dynamic Website & Web App Development](https://synaptro.ai/services/dynamic-website-development): E-commerce, education platforms, portals, and SaaS products
-- [Pricing & Plans](https://synaptro.ai/pricing): Development costs by business type, hosting and storage costs, payment schedule, maintenance plans, and technology stack
+- [Services overview](https://synaptro.in/services): All eight services with deliverables, outcomes, and timelines
+- [Static Website Development](https://synaptro.in/services/static-website-development): Fast, secure business websites and landing pages, live in 7 days
+- [Dynamic Website & Web App Development](https://synaptro.in/services/dynamic-website-development): E-commerce, education platforms, portals, and SaaS products
+- [Pricing & Plans](https://synaptro.in/pricing): Development costs by business type, hosting and storage costs, payment schedule, maintenance plans, and technology stack
 
 ## Blog
 
-- [Static vs Dynamic Websites](https://synaptro.ai/blog/static-vs-dynamic-website): How to choose the right architecture for your business
-- [How Much Does a Website Cost in 2026?](https://synaptro.ai/blog/website-cost-guide-2026): Honest pricing tiers and hidden costs
-- [How to Launch an MVP in 15 Days](https://synaptro.ai/blog/launch-mvp-in-15-days): Our exact sprint process
-- [AI SEO in 2026](https://synaptro.ai/blog/ai-seo-llm-visibility-2026): Ranking on Google and getting cited by AI assistants
-- [10 Business Processes to Automate with AI](https://synaptro.ai/blog/business-processes-to-automate-with-ai): Highest-ROI automation opportunities
-- [Choosing an AI Consulting Partner](https://synaptro.ai/blog/choosing-an-ai-consulting-partner): 12 due-diligence questions
+- [Static vs Dynamic Websites](https://synaptro.in/blog/static-vs-dynamic-website): How to choose the right architecture for your business
+- [How Much Does a Website Cost in 2026?](https://synaptro.in/blog/website-cost-guide-2026): Honest pricing tiers and hidden costs
+- [How to Launch an MVP in 15 Days](https://synaptro.in/blog/launch-mvp-in-15-days): Our exact sprint process
+- [AI SEO in 2026](https://synaptro.in/blog/ai-seo-llm-visibility-2026): Ranking on Google and getting cited by AI assistants
+- [10 Business Processes to Automate with AI](https://synaptro.in/blog/business-processes-to-automate-with-ai): Highest-ROI automation opportunities
+- [Choosing an AI Consulting Partner](https://synaptro.in/blog/choosing-an-ai-consulting-partner): 12 due-diligence questions
 
 ## Company
 
-- [About](https://synaptro.ai/about): Mission, values, and how we work
-- [Contact](https://synaptro.ai/contact): Free consultation and fixed-price quotes within 24 hours
+- [About](https://synaptro.in/about): Mission, values, and how we work
+- [Contact](https://synaptro.in/contact): Free consultation and fixed-price quotes within 24 hours
