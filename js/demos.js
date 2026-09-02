@@ -177,6 +177,134 @@
       ],
       outcome: "<b>127 applications screened in seconds</b>&nbsp;— your team interviews only the top three.",
     },
+    email: {
+      unread: 47,
+      mails: [
+        { from: "Acme Corp", subject: "Contract question before signature", preview: "Quick question on clause 4.2 before we sign…", tag: "Urgent", cls: "hot" },
+        { from: "Globex", subject: "Pricing for 40 seats?", preview: "We're comparing vendors this week…", tag: "Sales lead", cls: "ok" },
+        { from: "CloudServe GmbH", subject: "Invoice #8841 attached", preview: "Please find attached our invoice for…", tag: "Finance", cls: "" },
+        { from: "Rahul Sharma", subject: "Where is my order?", preview: "I ordered last Tuesday and haven't…", tag: "Auto-replied", cls: "ok" },
+        { from: "SaaS Weekly ×31", subject: "Newsletters & notifications", preview: "This week in SaaS: pricing pages…", tag: "Archived", cls: "" },
+      ],
+      stats: [
+        ["Needs your attention", "2", "hot"],
+        ["Sales leads routed", "1", "ok"],
+        ["Auto-replied", "9", "ok"],
+        ["Archived", "31", ""],
+      ],
+      draft: "Hi — thanks for flagging clause 4.2. The 60-day term you asked about is covered; I've attached the amended contract ready for signature.",
+      outcome: "<b>47 emails triaged in 6 seconds</b>&nbsp;— your first hour of the day, back.",
+    },
+    invoice: {
+      file: { name: "Invoice_8841.pdf", meta: "CloudServe GmbH · 2 pages" },
+      steps: ["Reading invoice…", "Extracting line items…", "Matching PO & goods receipt…", "Coding to general ledger…"],
+      fields: [
+        ["Vendor", "CloudServe GmbH", ""],
+        ["Invoice #", "INV-8841", ""],
+        ["Amount", "$12,450.00", ""],
+        ["Due date", "Oct 3 · Net 30", ""],
+        ["GL code", "6200 · Cloud services", "acc"],
+      ],
+      checks: ["PO-4471 matched", "Amounts within tolerance", "Goods receipt confirmed"],
+      outcome: "<b>Touchless 3-way match</b>&nbsp;— 12 minutes of AP work per invoice, gone.",
+    },
+    meeting: {
+      chat: [
+        { who: "ai", text: "Budget's approved on our side — we want the pilot live in October." },
+        { who: "user", text: "Great. We'll scope 25 seats to start and expand from there." },
+        { who: "ai", text: "Perfect. Send the security questionnaire to our IT lead, Dev, before kickoff." },
+      ],
+      summary: "Client approved budget. 25-seat pilot targeted for October; security review required before kickoff.",
+      actions: ["Send security questionnaire to Dev (owner: Sam)", "Draft 25-seat pilot order form", "Book October kickoff call"],
+      crm: [
+        ["Deal stage", "→ Pilot agreed", "ok"],
+        ["Amount", "$18,000 / yr", ""],
+        ["Close date", "Oct 15", ""],
+        ["Next step", "Security review", "acc"],
+      ],
+      outcome: "<b>Notes, tasks, and CRM updated</b>&nbsp;before your rep is back at their desk.",
+    },
+    content: {
+      brief: "Launch email for our new analytics dashboard — audience: CFOs",
+      variants: [
+        { label: "Variant A · Confident", head: "See every dollar, live.", body: "Your finance stack finally speaks CFO: real-time analytics across revenue, spend, and runway — in one dashboard your board will actually read." },
+        { label: "Variant B · Practical", head: "Close the books before lunch.", body: "Automated reporting and real-time analytics that turn month-end from a fire drill into a formality. Set up in a day, trusted by finance teams." },
+      ],
+      checks: ["Brand voice matched (professional · direct)", "Keyword coverage: “real-time analytics” ×3", "Reading grade 8 — scannable in 20 seconds"],
+      outcome: "<b>Campaign-ready drafts in seconds</b>&nbsp;— your team edits instead of staring at a blank page.",
+    },
+    fraud: {
+      txns: [
+        { main: "$89.00 · Grocery · Card 4412", sub: "Mumbai, IN · known device", tag: "Cleared", cls: "ok", flag: false },
+        { main: "$132.50 · Fuel · Card 8830", sub: "Pune, IN · known device", tag: "Cleared", cls: "ok", flag: false },
+        { main: "$54.20 · Streaming · Card 4412", sub: "Recurring · 14th month", tag: "Cleared", cls: "ok", flag: false },
+        { main: "$4,820.00 · Electronics · Card 4412", sub: "Vilnius, LT · new device · 03:12 local", tag: "Flagged", cls: "warn", flag: true },
+      ],
+      risk: [
+        ["Amount anomaly", "4.2× customer average", "red"],
+        ["Device", "First seen — unrecognized", "warn"],
+        ["Location", "Vilnius, LT ≠ home region", "red"],
+        ["Merchant history", "No prior purchases", "warn"],
+      ],
+      score: 91,
+      actions: ["Card frozen", "SMS verification sent to customer", "Case #7731 opened for review"],
+      outcome: "<b>Flagged in 300 milliseconds</b>&nbsp;— before the money left the account.",
+    },
+    forecast: {
+      product: { name: "Wireless Headphones — WH-1042", meta: "Electronics · 4 warehouses" },
+      fields: [
+        ["Current stock", "340 units", ""],
+        ["30-day forecast demand", "510 units", "acc"],
+        ["Projected stock-out", "Sep 24", "warn"],
+        ["Forecast confidence", "92%", "ok"],
+      ],
+      series: [310, 340, 355, 395, 430, 510],
+      rec: "Reorder 400 units by Sep 12 to hold a 98% service level through the seasonal ramp.",
+      outcome: "<b>Stock-out prevented</b>&nbsp;— roughly $18,400 of revenue protected this month.",
+    },
+    reviews: {
+      platforms: ["Google 4.4★ · 128", "Trustpilot 4.7★ · 61", "Yelp 4.1★ · 33"],
+      rows: [
+        { stars: "★★★★★", main: "“Fast and professional — went above and beyond.”", sub: "Priya M. · Google · 2h ago", tag: "Positive", cls: "ok", flag: false },
+        { stars: "★★", main: "“Delivery was late and nobody told us.”", sub: "Arjun K. · Google · 1h ago", tag: "Needs reply", cls: "warn", flag: true },
+      ],
+      draft: "Hi Arjun — you're right, and we're sorry: your order shipped late and we should have told you first. We've refunded the delivery fee and flagged this with our courier. If anything else is off, reply here and I'll handle it personally.",
+      checks: ["Sentiment analyzed across 3 platforms", "Priority review flagged", "On-brand response drafted"],
+      outcome: "<b>Every review answered within the hour</b>&nbsp;— without anyone refreshing five dashboards.",
+    },
+    onboarding: {
+      hire: { name: "Priya Patel", role: "Product Designer · starts Monday", initials: "PP" },
+      steps: ["Creating email, Slack & Figma accounts…", "Ordering laptop & monitor…", "Enrolling in payroll & benefits…", "Scheduling intro meetings with the team…", "Sending welcome pack & first-week plan…"],
+      fields: [
+        ["Tasks completed", "12 / 12", "ok"],
+        ["Accounts provisioned", "5", ""],
+        ["Meetings booked", "4", ""],
+        ["Day-one readiness", "100%", "ok"],
+      ],
+      outcome: "<b>Day-one ready without 14 HR emails</b>&nbsp;— every hire, every time.",
+    },
+    proposal: {
+      brief: "E-commerce site · 200 products · Stripe · 6 weeks",
+      steps: ["Parsing requirements…", "Scoping features & effort…", "Pricing against 40 similar projects…", "Assembling proposal document…"],
+      fields: [
+        ["Scope", "E-commerce store · 200 products", ""],
+        ["Integrations", "Stripe · shipping API", ""],
+        ["Timeline", "6 weeks · 4 milestones", ""],
+        ["Investment", "$14,800 fixed price", "acc"],
+      ],
+      sections: ["Executive summary", "Scope of work", "Milestones & timeline", "Pricing & terms"],
+      summary: "A 200-product e-commerce store with Stripe checkout, inventory sync, and order management — delivered in six weeks for a fixed $14,800, with 30 days of post-launch support included.",
+      outcome: "<b>Proposal out the same afternoon</b>&nbsp;— while competitors are still “circling back.”",
+    },
+    churn: {
+      scanned: 214,
+      accounts: [
+        { name: "Northwind Traders", initials: "NT", plan: "$48k ARR · Enterprise", risk: 87, cls: "risk-high", reasoning: "Usage down 41% in 30 days, the executive champion left the company, and two support tickets have been unresolved for 12+ days.", play: "Exec business review + 90-day success plan" },
+        { name: "Globex Corp", initials: "GC", plan: "$22k ARR · Growth", risk: 54, cls: "risk-med", reasoning: "Seat utilization is flat and the last QBR was skipped, but NPS is steady at 42 and billing is healthy.", play: "Feature-adoption campaign + QBR reschedule" },
+        { name: "Initech", initials: "IN", plan: "$15k ARR · Growth", risk: 12, cls: "risk-low", reasoning: "Healthy usage growth, seats expanding month over month, renewal highly likely.", play: "Upsell conversation at renewal" },
+      ],
+      outcome: "<b>At-risk revenue surfaced 60 days early</b>&nbsp;— while there's still time to save it.",
+    },
   };
 
   /* ---------- timeline helpers ---------- */
@@ -955,6 +1083,555 @@
         if (cand) { selectCand(+cand.getAttribute("data-cand")); return; }
         var view = e.target.closest("[data-view]");
         if (view) view.outerHTML = '<span class="dx-tag ok">' + I.check + "Interview invite sent</span>";
+      });
+    },
+  };
+
+  /* ---------- 09 · Email triage ---------- */
+  function mailRows(mails) {
+    return '<div class="dx-rows">' + mails.map(function (m, i) {
+      return '<div class="dx-row on" data-mail="' + i + '"><div class="dx-row-main"><b>' + m.from + " — " + m.subject + "</b><span>" + m.preview + '</span></div><span class="dx-tag" data-mailtag hidden></span></div>';
+    }).join("") + "</div>";
+  }
+  DEMOS.email = {
+    cat: "Productivity · Demo 09",
+    title: "AI Email Triage",
+    desc: "Classify, prioritize, and draft replies for your inbox — before you finish your coffee.",
+    render: function () {
+      var d = DEMO_DATA.email;
+      return '<div class="dx-grid">' +
+        '<div><div class="dx-panel"><span class="dx-label">' + I.mail + "Inbox — " + d.unread + ' unread</span>' + mailRows(d.mails) +
+        '<div class="dx-btn-row"><button class="dx-btn" data-triage>' + I.sparkle + "Triage Inbox</button></div></div></div>" +
+        '<div><div class="dx-panel"><span class="dx-label">AI triage</span>' + kvRows(d.stats) + "</div>" +
+        '<div class="dx-panel" style="margin-top:1rem;display:none" data-draftpanel><span class="dx-label">Drafted reply — Acme Corp</span>' +
+        '<div class="dx-quote">' + d.draft + "</div>" +
+        '<div class="dx-btn-row"><button class="dx-btn" data-send>' + I.mail + "Approve &amp; Send</button></div></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.email;
+      ctx.stage(0);
+      ctx.root.addEventListener("click", function (e) {
+        var send = e.target.closest("[data-send]");
+        if (send) { send.outerHTML = '<span class="dx-tag ok">' + I.check + "Sent to Acme Corp</span>"; return; }
+        var btn = e.target.closest("[data-triage]");
+        if (!btn || btn.disabled) return;
+        btn.disabled = true; btn.innerHTML = "Triaging…";
+        ctx.stage(1);
+        var rows = ctx.qsa("[data-mail]");
+        var p = Promise.resolve();
+        rows.forEach(function (row, i) {
+          p = p.then(function () {
+            if (!ctx.alive()) return;
+            var tag = row.querySelector("[data-mailtag]");
+            tag.hidden = false;
+            tag.className = "dx-tag " + (d.mails[i].cls || "");
+            tag.textContent = d.mails[i].tag;
+            return ctx.wait(420);
+          });
+        });
+        p.then(function () {
+          if (!ctx.alive()) return;
+          ctx.stage(2);
+          btn.innerHTML = I.check + "Inbox Triaged";
+          return showKvSequential(ctx, ctx.root);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          ctx.qs("[data-draftpanel]").style.display = "";
+          return ctx.wait(300);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          showOutcome(ctx);
+        });
+      });
+    },
+  };
+
+  /* ---------- 10 · Invoice processing ---------- */
+  DEMOS.invoice = {
+    cat: "Finance Ops · Demo 10",
+    title: "AI Invoice Processing",
+    desc: "Extract, match, and post invoices to your accounting system — touch-free.",
+    render: function () {
+      var d = DEMO_DATA.invoice;
+      return '<div class="dx-grid">' +
+        '<div><div class="dx-dropzone" data-drop><span class="dx-file-ico">PDF</span>' +
+        '<div><div class="dx-file-name">' + d.file.name + '</div><div class="dx-file-meta">' + d.file.meta + "</div></div></div>" +
+        '<div class="dx-btn-row"><button class="dx-btn" data-process>' + I.file + "Process Invoice</button></div>" +
+        '<div style="margin-top:1rem;display:none" data-progress-wrap><div class="dx-progress"><i data-progress></i></div>' +
+        '<p style="margin-top:0.5rem;font-size:0.75rem;color:var(--dk-mut)" data-status></p></div>' +
+        '<div class="dx-panel" style="margin-top:1rem;display:none" data-match><span class="dx-label">3-way match</span>' + checkList(d.checks) +
+        '<div class="dx-btn-row"><button class="dx-btn" data-post style="display:none">' + I.check + "Approve &amp; Post</button></div></div></div>" +
+        '<div class="dx-panel" style="display:none" data-extract><span class="dx-label">Extracted data</span>' + kvRows(d.fields) + "</div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.invoice;
+      ctx.stage(0);
+      ctx.root.addEventListener("click", function (e) {
+        var post = e.target.closest("[data-post]");
+        if (post) {
+          post.outerHTML = '<span class="dx-tag ok">' + I.check + "Posted to QuickBooks</span>";
+          showOutcome(ctx);
+          return;
+        }
+        var btn = e.target.closest("[data-process]");
+        if (!btn || btn.disabled) return;
+        btn.disabled = true; btn.innerHTML = "Processing…";
+        ctx.qs("[data-drop]").classList.add("dx-scanline");
+        ctx.stage(1);
+        var wrap = ctx.qs("[data-progress-wrap]"); wrap.style.display = "";
+        var bar = ctx.qs("[data-progress]"), status = ctx.qs("[data-status]");
+        var step = 0;
+        (function advance() {
+          if (!ctx.alive()) return;
+          step++;
+          bar.style.width = step * 25 + "%";
+          status.textContent = d.steps[step - 1];
+          if (step < 4) { setTimeout(advance, RM ? 40 : 620); return; }
+          ctx.wait(350).then(function () {
+            if (!ctx.alive()) return;
+            ctx.qs("[data-drop]").classList.remove("dx-scanline");
+            wrap.style.display = "none";
+            btn.style.display = "none";
+            ctx.stage(2);
+            var panel = ctx.qs("[data-extract]"); panel.style.display = "";
+            return showKvSequential(ctx, panel);
+          }).then(function () {
+            if (!ctx.alive()) return;
+            var m = ctx.qs("[data-match]"); m.style.display = "";
+            return showChecksSequential(ctx, m);
+          }).then(function () {
+            if (!ctx.alive()) return;
+            ctx.qs("[data-post]").style.display = "";
+          });
+        })();
+      });
+    },
+  };
+
+  /* ---------- 11 · Meeting assistant ---------- */
+  DEMOS.meeting = {
+    cat: "Productivity · Demo 11",
+    title: "AI Meeting Assistant",
+    desc: "Turn every call into a summary, action items, and an updated CRM — automatically.",
+    render: function () {
+      var d = DEMO_DATA.meeting;
+      return '<div class="dx-grid">' +
+        '<div class="dx-panel"><span class="dx-label">' + I.sparkle + 'Sales call — live transcript</span><div class="dx-chat" data-chat></div></div>' +
+        '<div><div class="dx-panel"><span class="dx-label">AI summary</span><div class="dx-quote" data-summary style="display:none">' + d.summary + "</div>" +
+        '<span class="dx-label" style="margin-top:1rem">Action items</span>' + checkList(d.actions) + "</div>" +
+        '<div class="dx-panel" style="margin-top:1rem"><span class="dx-label">CRM update</span>' + kvRows(d.crm) +
+        '<div class="dx-btn-row"><button class="dx-btn" data-sync style="display:none">' + I.database + "Sync to CRM</button></div></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.meeting;
+      var chat = ctx.qs("[data-chat]");
+      ctx.stage(0);
+      playChat(ctx, chat, d.chat, { ai: "Maya · Client", user: "Sam · You" })
+        .then(function () { if (!ctx.alive()) return; ctx.stage(1); return ctx.wait(500); })
+        .then(function () {
+          if (!ctx.alive()) return;
+          ctx.stage(2);
+          ctx.qs("[data-summary]").style.display = "";
+          return showChecksSequential(ctx, ctx.root);
+        })
+        .then(function () { if (!ctx.alive()) return; return showKvSequential(ctx, ctx.root); })
+        .then(function () {
+          if (!ctx.alive()) return;
+          ctx.qs("[data-sync]").style.display = "";
+          showOutcome(ctx);
+        });
+      ctx.root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-sync]");
+        if (b) b.outerHTML = '<span class="dx-tag ok">' + I.check + "Synced to HubSpot</span>";
+      });
+    },
+  };
+
+  /* ---------- 12 · Content studio ---------- */
+  DEMOS.content = {
+    cat: "Marketing · Demo 12",
+    title: "AI Content Studio",
+    desc: "Generate on-brand campaign copy with built-in SEO and brand-voice checks.",
+    render: function () {
+      var d = DEMO_DATA.content;
+      return '<div class="dx-query"><span class="dx-query-box">' + I.sparkle + "<span>" + d.brief + "</span></span>" +
+        '<button class="dx-btn" data-generate>Generate Copy</button></div>' +
+        '<div class="dx-variants">' + d.variants.map(function (v, i) {
+          return '<div class="dx-variant" data-variant="' + i + '"><span class="dx-var-label">' + v.label + "</span><h4>" + v.head + "</h4><p>" + v.body + '</p><button class="dx-btn ghost" data-use="' + i + '">Use This Variant</button></div>';
+        }).join("") + "</div>" +
+        '<div class="dx-panel" style="margin-top:1.25rem;display:none" data-checks><span class="dx-label">Quality checks</span>' + checkList(d.checks) + "</div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      ctx.stage(0);
+      ctx.root.addEventListener("click", function (e) {
+        var use = e.target.closest("[data-use]");
+        if (use) {
+          var i = use.getAttribute("data-use");
+          ctx.qsa("[data-variant]").forEach(function (v) { v.classList.toggle("sel", v.getAttribute("data-variant") === i); });
+          use.outerHTML = '<span class="dx-tag ok">' + I.check + "Copied to campaign</span>";
+          return;
+        }
+        var btn = e.target.closest("[data-generate]");
+        if (!btn || btn.disabled) return;
+        btn.disabled = true; btn.innerHTML = "Writing…";
+        ctx.stage(1);
+        ctx.wait(RM ? 40 : 1200).then(function () {
+          if (!ctx.alive()) return;
+          btn.innerHTML = I.check + "Drafts Ready";
+          ctx.stage(2);
+          var vars = ctx.qsa("[data-variant]");
+          var p = Promise.resolve();
+          vars.forEach(function (v) {
+            p = p.then(function () { if (!ctx.alive()) return; v.classList.add("on"); return ctx.wait(350); });
+          });
+          return p;
+        }).then(function () {
+          if (!ctx.alive()) return;
+          var c = ctx.qs("[data-checks]"); c.style.display = "";
+          return showChecksSequential(ctx, c);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          showOutcome(ctx);
+        });
+      });
+    },
+  };
+
+  /* ---------- 13 · Fraud detection ---------- */
+  DEMOS.fraud = {
+    cat: "Risk & Finance · Demo 13",
+    title: "AI Fraud Detection",
+    desc: "Spot anomalous transactions in milliseconds and act before the money moves.",
+    render: function () {
+      var d = DEMO_DATA.fraud;
+      return '<div class="dx-grid">' +
+        '<div class="dx-panel"><span class="dx-label">' + I.zap + 'Live transaction stream</span><div class="dx-rows">' +
+        d.txns.map(function (t, i) {
+          return '<div class="dx-row' + (t.flag ? " flag" : "") + '" data-txn="' + i + '"><div class="dx-row-main"><b>' + t.main + "</b><span>" + t.sub + '</span></div><span class="dx-tag ' + t.cls + '">' + t.tag + "</span></div>";
+        }).join("") + "</div></div>" +
+        '<div><div class="dx-panel" style="display:none" data-risk><span class="dx-label">Risk analysis — flagged transaction</span>' + kvRows(d.risk) +
+        '<div class="dx-score"><span class="dx-score-num" style="color:var(--dk-red)" data-score>—</span><span class="dx-score-bar"><i data-scorebar style="background:linear-gradient(90deg,hsl(38 92% 60%),hsl(0 70% 62%))"></i></span></div>' +
+        '<div class="dx-btn-row"><button class="dx-btn" data-block>' + I.alert + "Block &amp; Verify</button></div>" +
+        '<div style="margin-top:0.875rem;display:none" data-actions>' + checkList(d.actions) + "</div></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.fraud;
+      ctx.stage(0);
+      var rows = ctx.qsa("[data-txn]");
+      var p = Promise.resolve().then(function () { return ctx.wait(400); });
+      rows.forEach(function (row, i) {
+        p = p.then(function () {
+          if (!ctx.alive()) return;
+          row.classList.add("on");
+          return ctx.wait(d.txns[i].flag ? 500 : 650);
+        });
+      });
+      p.then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(1);
+        return ctx.wait(500);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(2);
+        var panel = ctx.qs("[data-risk]");
+        panel.style.display = "";
+        return showKvSequential(ctx, panel);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        var bar = ctx.qs("[data-scorebar]");
+        if (bar) bar.style.width = d.score + "%";
+        return ctx.count(ctx.qs("[data-score]"), d.score, { suffix: "/100", dur: 900 });
+      });
+      ctx.root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-block]");
+        if (!b) return;
+        b.outerHTML = '<span class="dx-tag ok">' + I.check + "Blocked &amp; customer verified</span>";
+        var acts = ctx.qs("[data-actions]");
+        acts.style.display = "";
+        showChecksSequential(ctx, acts).then(function () {
+          if (!ctx.alive()) return;
+          showOutcome(ctx);
+        });
+      });
+    },
+  };
+
+  /* ---------- 14 · Demand forecasting ---------- */
+  DEMOS.forecast = {
+    cat: "Supply Chain · Demo 14",
+    title: "AI Demand Forecasting",
+    desc: "Predict demand, prevent stock-outs, and generate purchase orders before it's urgent.",
+    render: function () {
+      var d = DEMO_DATA.forecast;
+      return '<div class="dx-grid">' +
+        '<div class="dx-panel"><span class="dx-label">' + I.search + 'Demand forecast</span>' +
+        '<div class="dx-row on" style="margin-bottom:0.75rem"><div class="dx-row-main"><b>' + d.product.name + "</b><span>" + d.product.meta + '</span></div><span class="dx-tag" data-fc-state>Forecasting…</span></div>' +
+        '<svg class="dx-chart-svg" viewBox="0 0 320 150" data-chart></svg></div>' +
+        '<div><div class="dx-panel"><span class="dx-label">Inventory position</span>' + kvRows(d.fields) + "</div>" +
+        '<div class="dx-panel" style="margin-top:1rem;display:none" data-recpanel><span class="dx-label">AI recommendation</span>' +
+        '<div class="dx-quote">&ldquo;' + d.rec + '&rdquo;</div>' +
+        '<div class="dx-btn-row"><button class="dx-btn" data-po>' + I.check + "Create Purchase Order</button></div></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.forecast;
+      ctx.stage(0);
+      ctx.wait(600).then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(1);
+        return ctx.wait(RM ? 40 : 1100);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(2);
+        var state = ctx.qs("[data-fc-state]");
+        state.className = "dx-tag ok";
+        state.textContent = "Forecast ready";
+        DEMOS.analyst._buildChart(ctx.qs("[data-chart]"), d.series, false);
+        return showKvSequential(ctx, ctx.root);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.qs("[data-recpanel]").style.display = "";
+        return ctx.wait(300);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        showOutcome(ctx);
+      });
+      ctx.root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-po]");
+        if (b) b.outerHTML = '<span class="dx-tag ok">' + I.check + "PO-2210 drafted · 400 units</span>";
+      });
+    },
+  };
+
+  /* ---------- 15 · Review manager ---------- */
+  DEMOS.reviews = {
+    cat: "Reputation · Demo 15",
+    title: "AI Review Manager",
+    desc: "Monitor reviews everywhere, analyze sentiment, and draft on-brand responses.",
+    render: function () {
+      var d = DEMO_DATA.reviews;
+      return '<div class="dx-tag-row" style="margin-bottom:1rem">' + d.platforms.map(function (pl) { return '<span class="dx-tag">' + pl + "</span>"; }).join("") + "</div>" +
+        '<div class="dx-grid">' +
+        '<div class="dx-panel"><span class="dx-label">Incoming reviews</span><div class="dx-rows">' +
+        d.rows.map(function (r, i) {
+          return '<div class="dx-row' + (r.flag ? " flag" : "") + '" data-review="' + i + '"><span class="dx-stars">' + r.stars + '</span><div class="dx-row-main"><b>' + r.main + "</b><span>" + r.sub + '</span></div><span class="dx-tag ' + r.cls + '" data-rtag hidden>' + r.tag + "</span></div>";
+        }).join("") + "</div>" +
+        '<div style="margin-top:0.875rem" data-checks>' + checkList(d.checks) + "</div></div>" +
+        '<div class="dx-panel" style="display:none" data-draftpanel><span class="dx-label">AI drafted response — Arjun K.</span>' +
+        '<div class="dx-quote">' + d.draft + "</div>" +
+        '<div class="dx-btn-row"><button class="dx-btn" data-approve>' + I.check + "Approve Response</button></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      ctx.stage(0);
+      var rows = ctx.qsa("[data-review]");
+      var p = Promise.resolve().then(function () { return ctx.wait(400); });
+      rows.forEach(function (row) {
+        p = p.then(function () {
+          if (!ctx.alive()) return;
+          row.classList.add("on");
+          return ctx.wait(550);
+        });
+      });
+      p.then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(1);
+        return ctx.wait(600);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(2);
+        ctx.qsa("[data-rtag]").forEach(function (t) { t.hidden = false; });
+        return showChecksSequential(ctx, ctx.qs("[data-checks]"));
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.qs("[data-draftpanel]").style.display = "";
+        showOutcome(ctx);
+      });
+      ctx.root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-approve]");
+        if (b) b.outerHTML = '<span class="dx-tag ok">' + I.check + "Posted to Google</span>";
+      });
+    },
+  };
+
+  /* ---------- 16 · Onboarding agent ---------- */
+  DEMOS.onboarding = {
+    cat: "People Ops · Demo 16",
+    title: "AI Onboarding Agent",
+    desc: "Provision accounts, schedule intros, and make every new hire day-one ready.",
+    render: function () {
+      var d = DEMO_DATA.onboarding;
+      return '<div class="dx-grid">' +
+        '<div><div class="dx-row on" style="margin-bottom:1rem"><span class="dx-avatar">' + d.hire.initials + '</span><div class="dx-row-main"><b>' + d.hire.name + "</b><span>" + d.hire.role + '</span></div><span class="dx-tag" data-ob-state>New hire</span></div>' +
+        '<div class="dx-btn-row" style="margin-top:0"><button class="dx-btn" data-runob>' + I.userPlus + "Run Onboarding</button></div>" +
+        '<div class="dx-panel" style="margin-top:1rem;display:none" data-steps-panel><span class="dx-label">Onboarding tasks</span>' +
+        '<ul class="dx-steps">' + d.steps.map(function (s) { return '<li><span class="dx-step-ico"></span>' + s + "</li>"; }).join("") + "</ul></div></div>" +
+        '<div class="dx-panel"><span class="dx-label">Readiness</span>' + kvRows(d.fields) + "</div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      ctx.stage(0);
+      ctx.root.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-runob]");
+        if (!btn || btn.disabled) return;
+        btn.disabled = true; btn.innerHTML = "Running…";
+        ctx.stage(1);
+        var panel = ctx.qs("[data-steps-panel]");
+        panel.style.display = "";
+        var steps = ctx.qsa(".dx-steps li");
+        var p = Promise.resolve();
+        steps.forEach(function (li) {
+          p = p.then(function () {
+            if (!ctx.alive()) return;
+            li.classList.add("run");
+            return ctx.wait(RM ? 40 : 700).then(function () { li.classList.remove("run"); li.classList.add("ok"); });
+          });
+        });
+        p.then(function () {
+          if (!ctx.alive()) return;
+          ctx.stage(2);
+          btn.innerHTML = I.check + "Onboarding Complete";
+          var state = ctx.qs("[data-ob-state]");
+          state.className = "dx-tag ok";
+          state.textContent = "Day-one ready";
+          return showKvSequential(ctx, ctx.root);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          showOutcome(ctx);
+        });
+      });
+    },
+  };
+
+  /* ---------- 17 · Proposal generator ---------- */
+  DEMOS.proposal = {
+    cat: "Sales Ops · Demo 17",
+    title: "AI Proposal Generator",
+    desc: "Turn rough requirements into a scoped, priced, client-ready proposal in minutes.",
+    render: function () {
+      var d = DEMO_DATA.proposal;
+      return '<div class="dx-query"><span class="dx-query-box">' + I.file + "<span>" + d.brief + "</span></span>" +
+        '<button class="dx-btn" data-generate>Generate Proposal</button></div>' +
+        '<div class="dx-panel" style="display:none" data-steps-panel><span class="dx-label">Building proposal</span>' +
+        '<ul class="dx-steps">' + d.steps.map(function (s) { return '<li><span class="dx-step-ico"></span>' + s + "</li>"; }).join("") + "</ul></div>" +
+        '<div class="dx-grid" style="display:none;margin-top:1.25rem" data-doc>' +
+        '<div><div class="dx-panel"><span class="dx-label">Proposal — Acme Retail Pvt Ltd</span>' + kvRows(d.fields) + "</div>" +
+        '<div class="dx-panel" style="margin-top:1rem"><span class="dx-label">Document sections</span>' + checkList(d.sections) + "</div></div>" +
+        '<div class="dx-panel"><span class="dx-label">Executive summary</span><div class="dx-quote">' + d.summary + "</div>" +
+        '<div class="dx-btn-row"><button class="dx-btn" data-sendprop>' + I.mail + "Send to Client</button></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      ctx.stage(0);
+      ctx.root.addEventListener("click", function (e) {
+        var send = e.target.closest("[data-sendprop]");
+        if (send) { send.outerHTML = '<span class="dx-tag ok">' + I.check + "Sent · awaiting signature</span>"; return; }
+        var btn = e.target.closest("[data-generate]");
+        if (!btn || btn.disabled) return;
+        btn.disabled = true; btn.innerHTML = "Generating…";
+        ctx.stage(1);
+        var panel = ctx.qs("[data-steps-panel]");
+        panel.style.display = "";
+        var steps = ctx.qsa(".dx-steps li");
+        var p = Promise.resolve();
+        steps.forEach(function (li) {
+          p = p.then(function () {
+            if (!ctx.alive()) return;
+            li.classList.add("run");
+            return ctx.wait(RM ? 40 : 620).then(function () { li.classList.remove("run"); li.classList.add("ok"); });
+          });
+        });
+        p.then(function () {
+          if (!ctx.alive()) return;
+          panel.style.display = "none";
+          btn.closest(".dx-query").style.display = "none";
+          ctx.stage(2);
+          var doc = ctx.qs("[data-doc]");
+          doc.style.display = "";
+          return showKvSequential(ctx, doc);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          return showChecksSequential(ctx, ctx.root, 220);
+        }).then(function () {
+          if (!ctx.alive()) return;
+          showOutcome(ctx);
+        });
+      });
+    },
+  };
+
+  /* ---------- 18 · Churn predictor ---------- */
+  DEMOS.churn = {
+    cat: "Customer Success · Demo 18",
+    title: "AI Churn Predictor",
+    desc: "Surface at-risk accounts weeks early — with the reasons and the save play.",
+    render: function () {
+      var d = DEMO_DATA.churn;
+      return '<div data-scan><div class="dx-progress"><i data-progress></i></div>' +
+        '<p style="margin-top:0.5rem;font-size:0.75rem;color:var(--dk-mut)" data-status>Scoring ' + d.scanned + " accounts…</p></div>" +
+        '<div class="dx-grid" style="display:none;margin-top:1rem" data-results>' +
+        '<div><span class="dx-label">Accounts by churn risk</span><div class="dx-cand-list">' +
+        d.accounts.map(function (a, i) {
+          return '<button type="button" class="dx-cand" data-acct="' + i + '"><span class="dx-avatar">' + a.initials + "</span>" +
+            '<span class="dx-cand-info"><b>' + a.name + "</b><span>" + a.plan + "</span></span>" +
+            '<span class="dx-match"><b class="' + a.cls + '" style="color:var(--dk-' + (a.cls === "risk-high" ? "red" : a.cls === "risk-med" ? "warn" : "ok") + ')">' + a.risk + "%</b><span>Churn risk</span></span></button>";
+        }).join("") + "</div></div>" +
+        '<div><div class="dx-panel"><span class="dx-label">Why this account is at risk</span><p class="dx-reasoning" data-reasoning></p></div>' +
+        '<div class="dx-panel" style="margin-top:1rem"><span class="dx-label">Recommended save play</span><div class="dx-quote" data-play></div>' +
+        '<div class="dx-btn-row"><button class="dx-btn" data-launch>' + I.zap + "Launch Save Play</button></div></div></div></div>" +
+        outcomeBar(d.outcome);
+    },
+    run: function (ctx) {
+      var d = DEMO_DATA.churn;
+      ctx.stage(0);
+      var bar = ctx.qs("[data-progress]"), status = ctx.qs("[data-status]");
+      ctx.wait(300).then(function () {
+        if (!ctx.alive()) return;
+        ctx.stage(1);
+        var pct = 0;
+        return new Promise(function (res) {
+          (function adv() {
+            if (!ctx.alive()) return res();
+            pct += RM ? 100 : 14 + Math.random() * 14;
+            bar.style.width = Math.min(pct, 100) + "%";
+            status.textContent = "Scoring " + Math.min(Math.round((pct / 100) * d.scanned), d.scanned) + " of " + d.scanned + " accounts…";
+            if (pct < 100) setTimeout(adv, 230); else res();
+          })();
+        });
+      }).then(function () {
+        if (!ctx.alive()) return;
+        return ctx.wait(300);
+      }).then(function () {
+        if (!ctx.alive()) return;
+        ctx.qs("[data-scan]").style.display = "none";
+        ctx.stage(2);
+        ctx.qs("[data-results]").style.display = "";
+        var accts = ctx.qsa(".dx-cand");
+        var p = Promise.resolve();
+        accts.forEach(function (a) {
+          p = p.then(function () { if (!ctx.alive()) return; a.classList.add("on"); return ctx.wait(240); });
+        });
+        return p;
+      }).then(function () {
+        if (!ctx.alive()) return;
+        selectAcct(0);
+        showOutcome(ctx);
+      });
+      function selectAcct(i) {
+        ctx.qsa(".dx-cand").forEach(function (a, j) { a.classList.toggle("sel", i === j); });
+        ctx.qs("[data-reasoning]").textContent = d.accounts[i].reasoning;
+        ctx.qs("[data-play]").textContent = d.accounts[i].play;
+      }
+      ctx.root.addEventListener("click", function (e) {
+        var acct = e.target.closest("[data-acct]");
+        if (acct) { selectAcct(+acct.getAttribute("data-acct")); return; }
+        var launch = e.target.closest("[data-launch]");
+        if (launch) launch.outerHTML = '<span class="dx-tag ok">' + I.check + "Save play launched · CSM assigned</span>";
       });
     },
   };
