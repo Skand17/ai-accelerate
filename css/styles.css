@@ -68,6 +68,11 @@
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
+/* Decorative absolute elements (orbs, glows, badges) must never create
+   a horizontal scrollbar. Scrollable widgets (tables) have their own
+   overflow-x:auto wrappers, so this is safe. */
+html, body { overflow-x: hidden; overflow-x: clip; }
+
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -101,6 +106,14 @@ table { border-collapse: collapse; }
 .container-4xl { max-width: 56rem; margin-inline: auto; }
 .container-5xl { max-width: 64rem; margin-inline: auto; }
 
+/* Grid/flex children default to min-width:auto, which lets wide intrinsic
+   content (long <select> options, nowrap text) blow out narrow layouts. */
+.hero-inner > *, .landing-hero-grid > *, .contact-grid > *, .service-grid > *,
+.form-grid > *, .mission-grid > *, .team-grid > *, .footer-inner > *,
+.featured-grid > *, .compact-grid > *, .posts-grid > *, .related-grid > *,
+.packages-grid > *, .plans-grid > *, .values-grid > *, .benefit-grid > * { min-width: 0; }
+select { max-width: 100%; text-overflow: ellipsis; }
+
 .section { padding-block: 6rem; position: relative; }
 .section-tinted { background: hsl(var(--secondary) / 0.3); }
 .section-head { text-align: center; margin-bottom: 3.5rem; }
@@ -130,9 +143,15 @@ table { border-collapse: collapse; }
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  white-space: nowrap; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+  white-space: nowrap; max-width: 100%; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
   height: 2.5rem; padding-inline: 1.25rem;
   transition: all 0.2s ease; cursor: pointer;
+}
+/* On small phones let button labels wrap instead of overflowing the screen. */
+@media (max-width: 480px) {
+  .btn { white-space: normal; height: auto; min-height: 2.5rem; padding-block: 0.5rem; text-align: center; }
+  .btn-lg { min-height: 3rem; }
+  .btn-xl { min-height: 3.5rem; padding-inline: 1.5rem; }
 }
 .btn:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
 .btn:disabled { pointer-events: none; opacity: 0.5; }
@@ -193,12 +212,17 @@ table { border-collapse: collapse; }
 .navbar-logo:hover img { transform: scale(1.05); }
 .dark .navbar-logo img, .dark .footer-logo img, .dark .drawer-logo img { filter: brightness(2.1) saturate(0.85); }
 
-.nav-desktop { display: none; align-items: center; gap: 2rem; }
+/* The full desktop nav (6 links + CTA) only fits cleanly from ~1024px;
+   tablets get the drawer, which stays tidy at every width. */
+.nav-desktop { display: none; align-items: center; gap: 1.75rem; }
 .nav-actions { display: none; align-items: center; gap: 0.75rem; }
 .nav-mobile-actions { display: flex; align-items: center; gap: 0.25rem; }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav-desktop, .nav-actions { display: flex; }
   .nav-mobile-actions { display: none; }
+}
+@media (min-width: 1200px) {
+  .nav-desktop { gap: 2rem; }
 }
 
 .nav-link {
@@ -212,7 +236,7 @@ table { border-collapse: collapse; }
 .mega-wrap { position: relative; }
 .mega-menu {
   position: absolute; left: 50%; top: 100%; transform: translateX(-50%); padding-top: 1rem;
-  width: min(760px, 90vw); z-index: 50;
+  width: min(760px, calc(100vw - 2rem)); z-index: 50;
   opacity: 0; visibility: hidden; translate: 0 10px;
   transition: opacity 0.18s ease, translate 0.18s ease, visibility 0.18s;
 }
@@ -751,7 +775,8 @@ body.drawer-open .drawer { transform: translateX(0); }
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; gap: 3rem; }
 @media (min-width: 1024px) { .contact-grid { grid-template-columns: 3fr 2fr; } }
-.contact-side { position: sticky; top: 7rem; display: flex; flex-direction: column; gap: 2rem; align-self: start; }
+.contact-side { display: flex; flex-direction: column; gap: 2rem; align-self: start; }
+@media (min-width: 1024px) { .contact-side { position: sticky; top: 7rem; } }
 .contact-side h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
 .expectations { display: flex; flex-direction: column; gap: 1.25rem; }
 .expectation { display: flex; align-items: flex-start; gap: 1rem; }
@@ -801,6 +826,20 @@ body.drawer-open .drawer { transform: translateX(0); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+/* ---------- Small-screen rhythm (kept last so it wins the cascade) ---------- */
+@media (max-width: 640px) {
+  .section { padding-block: 4rem; }
+  .page-hero { padding: 6.5rem 0 3rem; }
+  .hero { padding-top: 6.5rem; }
+  .article { padding-top: 6.5rem; }
+  .section-head { margin-bottom: 2.5rem; }
+  .contact-form { padding: 1.25rem; }
+  .service-article { padding: 1.5rem; }
+  .featured-post { padding: 1.5rem; }
+  .modal { padding: 2rem 1.5rem; }
+}
+@media (max-width: 400px) { .container { padding-inline: 1rem; } }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {

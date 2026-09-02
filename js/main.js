@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var SITE_EMAIL = "Abhishekmis0201@gmail.com";
+  var SITE_EMAIL = "sales@synaptro.in";
   var FORMSPREE_URL = "https://formspree.io/f/maewllyl";
 
   /* ---------- Theme (light default, class-based dark) ---------- */

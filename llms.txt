@@ -9,7 +9,7 @@ Key facts:
 - Data engineering & BI: Power BI and Tableau dashboards, ETL/ELT pipelines, and cloud data warehouses on AWS, Azure, or GCP (Redshift, Synapse, BigQuery, Snowflake)
 - Technology: React + TypeScript + Tailwind frontends; Node.js or Python (FastAPI) backends; PostgreSQL; Vercel/Netlify/Cloudflare for static hosting, AWS/GCP for dynamic
 - SEO service covers both Google rankings and AI-assistant visibility (structured data, llms.txt, answer-engine optimization)
-- Contact: Abhishekmis0201@gmail.com — replies within 24 hours, free 30-minute consultation
+- Contact: sales@synaptro.in — replies within 24 hours, free 30-minute consultation
 
 ## Services
 
