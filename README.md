@@ -5,8 +5,9 @@ This folder is the entire website with **zero dependencies and no build step**:
 ```
 index.html                  Home
 services/                   Services overview (+ two landing pages inside)
-ai-demos/                   "What We Build" — 8 interactive AI product demos
-pricing/  blog/  about/  contact/
+ai-demos/                   "What We Build" — 18 interactive AI product demos
+pricing/                    Redirect to /contact/ (pricing page was removed)
+blog/  about/  contact/
 blog/<slug>/                One folder per article (9 articles)
 404.html                    Not-found page (GitHub Pages serves it automatically)
 css/styles.css              The whole design system (light + dark theme)
