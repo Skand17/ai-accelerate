@@ -120,16 +120,25 @@
 
   /* ---------- Count-up stats ---------- */
   var countEls = document.querySelectorAll("[data-count-to]");
+  function formatCount(el, v) {
+    var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var s = v.toFixed(dec);
+    if (el.hasAttribute("data-comma")) {
+      var parts = s.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      s = parts.join(".");
+    }
+    return (el.getAttribute("data-prefix") || "") + s + (el.getAttribute("data-suffix") || "");
+  }
   function animateCount(el) {
-    var end = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-    var suffix = el.getAttribute("data-suffix") || "";
+    var end = parseFloat(el.getAttribute("data-count-to")) || 0;
     var duration = 1400;
     var start = null;
     function tick(ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-      el.textContent = Math.round(eased * end) + suffix;
+      el.textContent = formatCount(el, eased * end);
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -149,7 +158,7 @@
     countEls.forEach(function (el) { countObserver.observe(el); });
   } else {
     countEls.forEach(function (el) {
-      el.textContent = el.getAttribute("data-count-to") + (el.getAttribute("data-suffix") || "");
+      el.textContent = formatCount(el, parseFloat(el.getAttribute("data-count-to")) || 0);
     });
   }
 

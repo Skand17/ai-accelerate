@@ -26,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/landing.css" />
     <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}</script>
 
     <script defer src="https://shown.io/metrics/Bm3BwdmR8r" type="text/javascript"></script>
@@ -139,64 +140,8 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How can you build an MVP in just 15 days?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We combine ruthless scoping (one core flow, nothing else), a proven modern stack, managed services for auth/payments/email instead of building from scratch, and AI-accelerated development reviewed by senior engineers. The 15 days covers scoping, design, build, hardening, and launch to a live domain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a static website or a dynamic web application?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If your site's job is to inform and convert visitors (company site, landing page, portfolio), a static website is faster, cheaper, more secure, and better for SEO. If users need to log in, pay, book, or see personalized data, you need a dynamic web application. On our free call we'll tell you honestly which one fits — including when the cheaper option is right."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does a website or MVP cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every project is quoted fixed-price after a free scoping call, so you know the exact cost before we start. Static websites are the most affordable tier, dynamic web applications are priced by feature scope, and 15-day MVPs are a fixed-price package. No hourly billing, no surprise invoices."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens after launch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every build includes 30 days of post-launch support: bug fixes, small tweaks, and guidance. After that you can maintain it yourself (you own 100% of the code), or continue with an optional maintenance or growth plan covering updates, SEO, and marketing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with non-technical founders?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most of our clients are non-technical. We handle everything technical — domains, hosting, code, deployment — and explain decisions in plain language. You own all accounts and all code from day one."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is AI SEO / LLM visibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beyond ranking on Google, we optimize your site to be discovered and cited by AI assistants like ChatGPT, Claude, and Perplexity — where a growing share of buying research now happens. This includes structured data, llms.txt, AI-crawler-friendly configuration, and content written to be quoted by answer engines."
-      }
-    }
-  ]
-}
-</script>
   </head>
-  <body>
+  <body class="page-landing">
 <header class="navbar">
   <div class="container navbar-inner">
     <a class="navbar-logo" href="/" aria-label="Synaptro.AI — home">
@@ -336,275 +281,236 @@
 
 <main>
 
-<!-- Hero: what we do, why it matters, one action -->
-<section class="site-hero">
-  <div class="container">
-    <p class="hero-kicker">Synaptro · Technology consultancy &amp; product studio</p>
-    <h1>We build the software and AI systems your business <em>actually needs.</em></h1>
-    <p class="hero-standfirst">AI agents that clear your team's busywork. Products shipped in weeks, not quarters. Websites and data that quietly earn their keep. Designed, built, and run by senior engineers — at a fixed, agreed price.</p>
-    <div class="hero-actions">
-      <a class="btn btn-hero btn-xl" href="/contact/">Book a free consultation</a>
-      <a class="link-quiet" href="#work">See what we build ↓</a>
+<!-- ============ HERO ============ -->
+<section class="l-hero">
+  <div class="container l-hero-grid">
+    <div>
+      <span class="l-kicker"><span class="l-dot pulse"></span> AI &amp; software engineering studio</span>
+      <h1>We build the software and AI systems your business <span class="hl">actually needs.</span></h1>
+      <p class="l-hero-sub">From idea to production, we help businesses automate work, unlock data, and build products with AI.</p>
+      <div class="l-hero-ctas">
+        <a class="l-btn l-btn-primary" href="/contact/">Build something with us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="l-btn l-btn-ghost" href="#work">See our work</a>
+      </div>
+      <p class="l-hero-note">Free 30-minute consultation · Reply within 24 hours · You own 100% of the code</p>
     </div>
-    <p class="hero-smallprint">Free 30-minute consultation · Reply within 24 hours · You own 100% of the code</p>
-  </div>
-</section>
 
-<!-- A believable build, full width -->
-<section class="hero-frame" aria-label="Example of our work">
-  <div class="container">
-    <div class="browser">
-      <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">ops.meridianfreight.example — AI operations console</span></div>
-      <div class="app">
-        <div class="app-top">
-          <span class="app-brand">Meridian Freight <span>/ Operations</span></span>
-          <nav class="app-nav" aria-hidden="true"><b>Shipments</b><span>Exceptions</span><span>Billing</span><span>Reports</span></nav>
-          <span class="app-user">AK</span>
+    <!-- A real product surface, built in HTML/CSS — not an image -->
+    <div class="dash-wrap reveal" aria-label="Example AI operations dashboard">
+      <div class="dash">
+        <div class="dash-top">
+          <span class="dash-brand"><i></i>Synaptro Ops</span>
+          <span class="dash-env"><span class="l-dot pulse"></span> Production · all agents healthy</span>
         </div>
-        <div class="app-body">
-          <div class="app-main">
-            <div class="app-kpis">
-              <div class="app-kpi"><span>On-time delivery</span><b class="up">96.4%</b></div>
-              <div class="app-kpi"><span>Open exceptions</span><b>7</b></div>
-              <div class="app-kpi"><span>Resolved by AI today</span><b class="up">132</b></div>
-              <div class="app-kpi"><span>Avg. response</span><b>38s</b></div>
+        <div class="dash-tabs" aria-hidden="true">
+          <span class="dash-tab on">Overview</span><span class="dash-tab">AI Agents</span><span class="dash-tab">Workflows</span><span class="dash-tab">Analytics</span><span class="dash-tab">Integrations</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-kpis">
+            <div class="dash-kpi"><span>Tasks completed</span><b data-count-to="1284" data-comma>0</b><em>this month</em></div>
+            <div class="dash-kpi"><span>Time saved</span><b data-count-to="320" data-suffix=" hrs">0</b><em>across 4 teams</em></div>
+            <div class="dash-kpi"><span>Cost reduced</span><b data-count-to="42000" data-prefix="₹" data-comma>0</b><em>vs. manual handling</em></div>
+            <div class="dash-kpi"><span>Accuracy</span><b data-count-to="98.6" data-decimals="1" data-suffix="%">0</b><em>human-verified sample</em></div>
+          </div>
+          <div class="dash-cols">
+            <div class="dash-panel">
+              <div class="dash-panel-title"><span>Recent activity</span><span>live</span></div>
+              <ul class="dash-feed">
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Processed 34 invoices <time>2m</time></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Updated CRM with new leads <time>9m</time></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Generated performance report <time>16m</time></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Replied to 42 customer queries <time>31m</time></li>
+              </ul>
             </div>
-            <p class="app-section-title">Live shipments</p>
-            <div style="overflow-x:auto">
-            <table class="app-table">
-              <thead><tr><th>Shipment</th><th>Route</th><th>ETA</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td>TRK-2214</td><td>Pune → Nagpur</td><td>Today, 17:40</td><td><span class="chip warn">Rebooked</span></td></tr>
-                <tr><td>TRK-2209</td><td>Mumbai → Surat</td><td>Today, 15:10</td><td><span class="chip ok">On time</span></td></tr>
-                <tr><td>TRK-2203</td><td>Delhi → Jaipur</td><td>Tomorrow, 09:00</td><td><span class="chip ok">On time</span></td></tr>
-                <tr><td>TRK-2198</td><td>Chennai → Kochi</td><td>Today, 21:25</td><td><span class="chip info">In review</span></td></tr>
-              </tbody>
-            </table>
+            <div class="dash-panel">
+              <div class="dash-panel-title"><span>Agent workload</span><span>7 days</span></div>
+              <div class="dash-bars" aria-hidden="true">
+                <i style="height:42%"></i><i style="height:58%"></i><i style="height:50%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:88%"></i><i style="height:76%"></i>
+              </div>
+              <div class="dash-days" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
             </div>
           </div>
-          <aside class="app-side">
-            <p class="app-section-title">AI agent activity</p>
-            <ul class="app-feed">
-              <li><b>Rebooked TRK-2214 after carrier delay</b>Customer notified, ETA updated. <time>2 min ago</time></li>
-              <li><b>Answered delivery query #8817</b>Order located, resolution logged to CRM. <time>11 min ago</time></li>
-              <li><b>Flagged invoice mismatch on PO-4471</b>Held for human review. <time>26 min ago</time></li>
-            </ul>
-          </aside>
         </div>
       </div>
     </div>
-    <p class="frame-caption">A representative build: an AI operations console where agents handle routine work and people handle judgement. Explore the interactive demos below to try systems like this yourself.</p>
   </div>
 </section>
 
-<!-- 01 · What we do -->
-<section class="section">
+<!-- ============ AI AGENTS ============ -->
+<section class="l-section">
   <div class="container">
-    <p class="sec-label"><b>01</b> What we do</p>
-    <h2 class="sec-title">Three ways we make technology pay for itself</h2>
-    <div class="what-grid" style="margin-top:3rem">
-      <div class="what-item">
-        <h3>Automate the busywork</h3>
-        <p>Custom AI agents and workflow automation for support, documents, and back-office operations — integrated with the tools you already use, with people kept in the loop where it matters.</p>
-        <a class="link-quiet" href="/services/#automation">Automation &amp; AI agents</a>
-      </div>
-      <div class="what-item">
-        <h3>Ship products, fast</h3>
-        <p>AI-powered MVPs and full web applications, delivered in fixed sprints by senior engineers. Production-grade from day one — launched, monitored, and supported.</p>
-        <a class="link-quiet" href="/services/#mvp-development">MVP in 15 days</a>
-      </div>
-      <div class="what-item">
-        <h3>Grow what you launch</h3>
-        <p>Websites that convert, dashboards your team actually opens, and SEO built for both Google and AI assistants — so what we build keeps earning after launch.</p>
-        <a class="link-quiet" href="/services/#ai-seo">SEO &amp; growth</a>
-      </div>
+    <div class="l-center">
+      <p class="l-label"><b>01</b> AI Agents</p>
+      <h2 class="l-title">AI agents that do real work</h2>
+      <p class="l-intro">Connect your tools, data and workflows with intelligent agents that understand, reason and take action.</p>
+    </div>
+    <div class="agents-stage reveal">
+      <svg class="agents-svg" viewBox="0 0 860 396" role="img" aria-label="Diagram: email, documents, CRM, spreadsheets and your app feed one AI agent, which understands, reasons, uses tools and takes action"><defs><radialGradient id="agent-glow-grad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="hsl(22 90% 55%)" stop-opacity="0.16"/><stop offset="100%" stop-color="hsl(22 90% 55%)" stop-opacity="0"/></radialGradient></defs><ellipse class="agents-glow" cx="430" cy="199" rx="200" ry="90"/><path class="link draw" d="M98 60 C 98 110, 430 120, 430 172"/><path class="link flow-anim draw" d="M264 60 C 264 110, 430 120, 430 172"/><path class="link hot draw" d="M430 60 C 430 110, 430 120, 430 172"/><path class="link flow-anim draw" d="M596 60 C 596 110, 430 120, 430 172"/><path class="link draw" d="M762 60 C 762 110, 430 120, 430 172"/><path class="link draw" d="M430 226 C 430 280, 164 292, 164 336"/><path class="link hot draw" d="M430 226 C 430 280, 341 292, 341 336"/><path class="link hot draw" d="M430 226 C 430 280, 518 292, 518 336"/><path class="link draw" d="M430 226 C 430 280, 695 292, 695 336"/><rect class="node-box" x="30" y="18" width="136" height="42" rx="10"/><text class="node-label" x="98" y="43.5" text-anchor="middle">EMAIL</text><rect class="node-box" x="196" y="18" width="136" height="42" rx="10"/><text class="node-label" x="264" y="43.5" text-anchor="middle">DOCUMENTS</text><rect class="node-box" x="362" y="18" width="136" height="42" rx="10"/><text class="node-label" x="430" y="43.5" text-anchor="middle">CRM</text><rect class="node-box" x="528" y="18" width="136" height="42" rx="10"/><text class="node-label" x="596" y="43.5" text-anchor="middle">SPREADSHEETS</text><rect class="node-box" x="694" y="18" width="136" height="42" rx="10"/><text class="node-label" x="762" y="43.5" text-anchor="middle">YOUR APP</text><rect class="node-box core-box" x="346" y="172" width="168" height="54" rx="10"/><text class="core-label" x="430" y="203.5" text-anchor="middle">AI AGENT</text><rect class="node-box" x="78" y="336" width="172" height="42" rx="10"/><text class="node-label" x="164" y="361.5" text-anchor="middle">UNDERSTAND</text><rect class="node-box" x="255" y="336" width="172" height="42" rx="10"/><text class="node-label" x="341" y="361.5" text-anchor="middle">REASON</text><rect class="node-box" x="432" y="336" width="172" height="42" rx="10"/><text class="node-label" x="518" y="361.5" text-anchor="middle">USE TOOLS</text><rect class="node-box" x="609" y="336" width="172" height="42" rx="10"/><text class="node-label" x="695" y="361.5" text-anchor="middle">TAKE ACTION</text></svg><div class="agents-mobile" aria-hidden="true"><div class="am-row"><span class="am-chip">EMAIL</span><span class="am-chip">DOCUMENTS</span><span class="am-chip">CRM</span><span class="am-chip">SPREADSHEETS</span><span class="am-chip">YOUR APP</span></div><span class="am-link"></span><span class="am-core">AI AGENT</span><span class="am-link"></span><div class="am-row"><span class="am-chip">UNDERSTAND</span><span class="am-chip">REASON</span><span class="am-chip">USE TOOLS</span><span class="am-chip">TAKE ACTION</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- 02 · Recent builds -->
-<section id="work" class="section" style="padding-top:2rem">
+<!-- ============ SERVICES ============ -->
+<section class="l-section" id="services">
   <div class="container">
-    <p class="sec-label"><b>02</b> Recent builds</p>
-    <h2 class="sec-title">Systems you can try right now</h2>
-    <p class="sec-intro">We publish working demos of what we build instead of logo walls. Each one below is interactive — open it, click around, watch it work.</p>
-    <div class="work-grid" style="margin-top:3rem">
-      <a class="work-card reveal" href="/ai-demos/">
-        <div class="shot"><div class="shot-win"><div class="shot-bar"><i></i><i></i><i></i></div>
-          <div class="shot-body">
-            <span class="bubble you">My order hasn't arrived yet.</span>
-            <span class="bubble">Found it — order #48291 is out for delivery today.</span>
-            <span class="bubble">I've updated your CRM record and sent a confirmation.</span>
-          </div>
-        </div></div>
-        <div class="work-body">
-          <span class="work-tag">AI agent · Customer support</span>
-          <h3>Support agent that resolves, not deflects</h3>
-          <p>Identifies the customer, finds the order, fixes the issue, and logs everything — escalating only what needs a human.</p>
-          <span class="link-quiet">Try the live demo</span>
+    <p class="l-label"><b>02</b> What we build</p>
+    <h2 class="l-title">Four disciplines, one team</h2>
+    <p class="l-intro">The diagrams are the pitch — this is literally how the systems we ship are shaped.</p>
+    <div class="l-services-grid">
+      <article class="l-card l-service">
+        <h3>SaaS Products &amp; Platforms</h3>
+        <p>Full products from first commit to paying users — MVPs in fixed 15-day sprints, then hardened and extended.</p>
+        <div class="l-service-diagram"><div class="pipe vert"><span class="pipe-node">FRONTEND</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">API</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">DATABASE</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">CLOUD</span></div></div>
+        <a class="l-link" href="/services/#mvp-development">MVP in 15 days <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+      <article class="l-card l-service">
+        <h3>Business Automation</h3>
+        <p>Repetitive operations — invoices, email, reporting, data entry — turned into monitored, reliable workflows.</p>
+        <div class="l-service-diagram"><div class="pipe vert"><span class="pipe-node">TRIGGER</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">PROCESS</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node accent">DECIDE</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">EXECUTE</span></div></div>
+        <a class="l-link" href="/services/#automation">Automation &amp; agents <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+      <article class="l-card l-service">
+        <h3>AI Engineering</h3>
+        <p>LLM systems built for production: retrieval, tool use, evals, and guardrails — not chatbot demos.</p>
+        <div class="l-service-diagram"><div class="pipe vert"><span class="pipe-node">USER</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node accent">LLM</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">TOOLS</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">DATA</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">ACTION</span></div></div>
+        <a class="l-link" href="/services/#ai-consulting">AI consulting <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+      <article class="l-card l-service">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <p>The platform underneath it all — deployed on AWS/GCP with CI/CD, observability and sane costs.</p>
+        <div class="l-service-diagram"><div class="pipe vert"><span class="pipe-node">API</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">SERVICES</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node">DATABASE</span><span class="pipe-arrow" aria-hidden="true">↓</span><span class="pipe-node accent">MONITORING</span></div></div>
+        <a class="l-link" href="/services/#cloud-devops">Cloud &amp; DevOps <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="l-section" id="work">
+  <div class="container">
+    <p class="l-label"><b>03</b> Case studies</p>
+    <h2 class="l-title">Real software. Real business problems.</h2>
+    <p class="l-intro">These interfaces aren't screenshots — they're HTML, live on this page, shaped exactly like the systems we deliver. Explore full interactive versions in our demo library.</p>
+    <div class="l-cases-grid">
+      <article class="l-card l-case reveal">
+        <div class="mini"><div class="mini-win"><div class="mini-head"><span>Procurement · RFQ console</span><span class="l-dot pulse"></span></div><div class="mini-body"><div class="mini-kpis"><div class="mini-kpi"><span>Open RFQs</span><b>128</b></div><div class="mini-kpi"><span>Suppliers</span><b>46</b></div><div class="mini-kpi"><span>Quotes received</span><b>312</b></div><div class="mini-kpi"><span>Savings this qtr</span><b class="up">₹8.4L</b></div></div><table class="mini-table"><thead><tr><th>RFQ</th><th>Category</th><th>Quotes</th><th>Status</th></tr></thead><tbody><tr><td><b>RFQ-2041</b></td><td>Steel pipes</td><td>5</td><td><span class="mini-chip ok">Awarded</span></td></tr><tr><td><b>RFQ-2044</b></td><td>Bearings</td><td>3</td><td><span class="mini-chip info">Comparing</span></td></tr><tr><td><b>RFQ-2047</b></td><td>Fasteners</td><td>1</td><td><span class="mini-chip warn">Awaiting</span></td></tr></tbody></table></div></div></div>
+        <div class="l-case-body">
+          <p class="l-case-tag">Procurement · Manufacturing</p>
+          <h3>RFQ automation</h3>
+          <p>Supplier quotes collected, compared and ranked automatically — buyers award instead of chasing emails.</p>
+          <a class="l-link" href="/ai-demos/">Explore the demos <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a class="work-card reveal reveal-d1" href="/ai-demos/">
-        <div class="shot"><div class="shot-win"><div class="shot-bar"><i></i><i></i><i></i></div>
-          <div class="shot-body">
-            <span class="rowline"><span>Acme_Contract.pdf</span><b>analyzed</b></span>
-            <span class="rowline"><span>Contract value</span><b>$240,000</b></span>
-            <span class="rowline"><span>Renewal notice</span><b>90 days</b></span>
-            <span class="rowline"><span>Clauses flagged</span><b>3</b></span>
-          </div>
-        </div></div>
-        <div class="work-body">
-          <span class="work-tag">Document intelligence · Legal &amp; finance</span>
-          <h3>Contracts read in seconds, not afternoons</h3>
-          <p>Extracts terms, dates, and obligations from contracts and invoices — and flags the clauses a lawyer should actually look at.</p>
-          <span class="link-quiet">Try the live demo</span>
+      </article>
+      <article class="l-card l-case reveal reveal-d1">
+        <div class="mini"><div class="mini-win"><div class="mini-head"><span>Analytics · Ask your data</span><span class="l-dot pulse"></span></div><div class="mini-body"><div class="mini-kpis"><div class="mini-kpi"><span>Revenue</span><b>₹4.2Cr</b></div><div class="mini-kpi"><span>Users</span><b>18.4k</b></div><div class="mini-kpi"><span>Conversion</span><b>3.8%</b></div><div class="mini-kpi"><span>Growth</span><b class="up">+12.4%</b></div></div><svg class="mini-chart" viewBox="0 0 250 92"><defs><linearGradient id="caseAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="hsl(22 90% 56%)" stop-opacity="0.22"/><stop offset="100%" stop-color="hsl(22 90% 56%)" stop-opacity="0"/></linearGradient></defs><line class="grid" x1="8" y1="24" x2="242" y2="24"/><line class="grid" x1="8" y1="48" x2="242" y2="48"/><line class="grid" x1="8" y1="72" x2="242" y2="72"/><path class="area" d="M8 66 C 40 60, 62 54, 92 50 S 150 40, 178 28 S 222 14, 242 10 L 242 84 L 8 84 Z"/><path class="line draw" d="M8 66 C 40 60, 62 54, 92 50 S 150 40, 178 28 S 222 14, 242 10"/><text class="axis" x="8" y="90">Apr</text><text class="axis" x="120" y="90">Jun</text><text class="axis" x="228" y="90">Sep</text></svg></div></div></div>
+        <div class="l-case-body">
+          <p class="l-case-tag">Analytics · SaaS</p>
+          <h3>AI data analyst</h3>
+          <p>Plain-English questions over live business data, answered with causes, charts and a recommendation.</p>
+          <a class="l-link" href="/ai-demos/">Try it live <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a class="work-card reveal reveal-d2" href="/ai-demos/">
-        <div class="shot"><div class="shot-win"><div class="shot-bar"><i></i><i></i><i></i></div>
-          <div class="shot-body">
-            <span class="rowline"><span>"Why did revenue dip last month?"</span></span>
-            <div class="minibars"><i style="height:55%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:78%"></i><i style="height:66%"></i><i style="height:44%"></i></div>
-          </div>
-        </div></div>
-        <div class="work-body">
-          <span class="work-tag">AI analyst · Revenue &amp; operations</span>
-          <h3>Ask your data questions in plain English</h3>
-          <p>Connects to your numbers and answers with causes, charts, and a recommendation — not another export to dig through.</p>
-          <span class="link-quiet">Try the live demo</span>
+      </article>
+      <article class="l-card l-case reveal reveal-d2">
+        <div class="mini"><div class="mini-win"><div class="mini-head"><span>Support · Agent trace</span><span class="l-dot pulse"></span></div><div class="mini-body"><div class="mini-flow"><span class="mini-flow-node"><span class="l-dot"></span>Customer message · “Where is my order?”</span><span class="mini-flow-link"></span><span class="mini-flow-node accent"><span class="l-dot"></span>AI Agent · intent + customer identified</span><span class="mini-flow-link"></span><span class="mini-flow-node"><span class="l-dot"></span>Knowledge base · order &amp; policy lookup</span><span class="mini-flow-link"></span><span class="mini-flow-node"><span class="l-dot"></span>CRM · ticket logged, record updated</span><span class="mini-flow-link"></span><span class="mini-flow-node"><span class="l-dot"></span>Response sent · 4.2s, no human touch</span></div></div></div></div>
+        <div class="l-case-body">
+          <p class="l-case-tag">Support · E-commerce</p>
+          <h3>Customer support agent</h3>
+          <p>Resolves routine tickets end-to-end against your knowledge base and CRM — and escalates the rest.</p>
+          <a class="l-link" href="/ai-demos/">Try it live <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
-      </a>
+      </article>
     </div>
-    <p class="work-note">All 18 demos use simulated data — the product patterns are exactly what we ship. <a class="link-quiet" href="/ai-demos/" style="color:hsl(var(--primary))">Explore the full demo library</a></p>
   </div>
 </section>
 
-<!-- 03 · How we work -->
-<section class="section section-tinted">
+<!-- ============ ARCHITECTURE ============ -->
+<section class="l-section">
   <div class="container">
-    <p class="sec-label"><b>03</b> How we work</p>
-    <h2 class="sec-title">A process built for speed — and trust</h2>
-    <div class="method-grid" style="margin-top:3rem">
-      <div class="method-step">
-        <h3>A free, useful conversation</h3>
-        <p>Thirty minutes on your goals. We'll tell you honestly what to build — and what not to. You leave with a scoped plan either way.</p>
-      </div>
-      <div class="method-step">
-        <h3>Fixed scope, fixed price</h3>
-        <p>A one-page proposal: exactly what we'll deliver, when, and for how much. Scope creep is our problem, not yours.</p>
-      </div>
-      <div class="method-step">
-        <h3>Built in the open</h3>
-        <p>Everything ships to a live URL from week one. You watch progress daily and steer early — no "big reveal."</p>
-      </div>
-      <div class="method-step">
-        <h3>Launch, then keep going</h3>
-        <p>Analytics, SEO, and 30 days of post-launch support are included in every build. Launch is the start, not the end.</p>
+    <div class="l-center">
+      <p class="l-label"><b>04</b> Under the hood</p>
+      <h2 class="l-title">Built for production</h2>
+      <p class="l-intro">Every AI system we ship runs on the same disciplined shape: orchestration, retrieval, tools and memory — wired into your real business systems.</p>
+    </div>
+    <div class="arch-stage reveal">
+      <svg class="arch-svg" viewBox="0 0 820 440" role="img" aria-label="Production architecture: user to application to AI orchestrator, branching into RAG with a vector database, tools with APIs into business systems, and memory with a database"><rect class="node-box" x="350" y="8" width="120" height="38" rx="10"/><text class="node-label" x="410" y="31.5" text-anchor="middle">USER</text><path class="link draw" d="M410 46 V 76"/><rect class="node-box" x="320" y="76" width="180" height="40" rx="10"/><text class="node-label" x="410" y="100.5" text-anchor="middle">APPLICATION</text><path class="link draw" d="M410 116 V 146"/><rect class="node-box core-box" x="305" y="146" width="210" height="46" rx="10"/><text class="core-label" x="410" y="173.5" text-anchor="middle">AI ORCHESTRATOR</text><path class="link draw" d="M410 192 C 410 220, 150 226, 150 252"/><path class="link draw" d="M410 192 C 410 220, 410 226, 410 252"/><path class="link draw" d="M410 192 C 410 220, 670 226, 670 252"/><rect class="node-box" x="90" y="252" width="120" height="38" rx="10"/><text class="node-label" x="150" y="275.5" text-anchor="middle">RAG</text><rect class="node-box" x="350" y="252" width="120" height="38" rx="10"/><text class="node-label" x="410" y="275.5" text-anchor="middle">TOOLS</text><rect class="node-box" x="610" y="252" width="120" height="38" rx="10"/><text class="node-label" x="670" y="275.5" text-anchor="middle">MEMORY</text><path class="link draw" d="M150 290 V 318"/><path class="link draw" d="M410 290 V 318"/><path class="link draw" d="M670 290 V 318"/><rect class="node-box" x="80" y="318" width="140" height="38" rx="10"/><text class="node-label" x="150" y="341.5" text-anchor="middle">VECTOR DB</text><rect class="node-box" x="350" y="318" width="120" height="38" rx="10"/><text class="node-label" x="410" y="341.5" text-anchor="middle">APIs</text><rect class="node-box" x="600" y="318" width="140" height="38" rx="10"/><text class="node-label" x="670" y="341.5" text-anchor="middle">DATABASE</text><path class="link draw flow-anim" d="M410 356 V 386"/><rect class="node-box blue-box" x="290" y="386" width="240" height="40" rx="10"/><text class="node-label blue-label" x="410" y="410.5" text-anchor="middle">BUSINESS SYSTEMS</text></svg><div class="arch-mobile agents-mobile" aria-hidden="true"><span class="am-chip">USER</span><span class="am-link"></span><span class="am-chip">APPLICATION</span><span class="am-link"></span><span class="am-core">AI ORCHESTRATOR</span><span class="am-link"></span><div class="am-row"><span class="am-chip">RAG · VECTOR DB</span><span class="am-chip">TOOLS · APIs</span><span class="am-chip">MEMORY · DATABASE</span></div><span class="am-link"></span><span class="am-chip">BUSINESS SYSTEMS</span></div>
+      <div class="arch-tags">
+        <span class="arch-tag">OpenAI</span><span class="arch-tag">Anthropic</span><span class="arch-tag">LangGraph</span><span class="arch-tag">Python</span><span class="arch-tag">AWS</span><span class="arch-tag">PostgreSQL</span><span class="arch-tag">Docker</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Outcomes: quiet numbers -->
-<section class="outcomes" aria-label="What working with us looks like in numbers">
-  <div class="container outcomes-grid">
-    <div class="outcome"><b>15<sup> days</sup></b><span>from idea to a launched MVP</span></div>
-    <div class="outcome"><b>7<sup> days</sup></b><span>to a live, SEO-ready website</span></div>
-    <div class="outcome"><b>24<sup> hrs</sup></b><span>longest you'll wait for a reply</span></div>
-    <div class="outcome"><b>100%</b><span>code and account ownership stays with you</span></div>
-  </div>
-</section>
-
-<!-- 04 · Services -->
-<section class="section">
+<!-- ============ TECHNOLOGY ============ -->
+<section class="l-section">
   <div class="container">
-    <p class="sec-label"><b>04</b> Services</p>
-    <h2 class="sec-title">Everything under one roof</h2>
-    <p class="sec-intro">Strategy, build, and growth from one senior team — so nothing gets lost between agencies.</p>
-    <div class="svc-index" style="margin-top:2.5rem">
-      <a class="svc-row" href="/services/#ai-consulting">
-        <div class="svc-row-main"><h3>AI Consulting &amp; Strategy</h3><p>Find where AI pays off in your business, with a costed 90-day roadmap.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#automation">
-        <div class="svc-row-main"><h3>Automation &amp; AI Agents</h3><p>Custom agents for support, sales, documents, and back-office work.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#mvp-development">
-        <div class="svc-row-main"><h3>MVP Development in 15 Days</h3><p>Idea to a launched, production-grade product in a fixed sprint.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/dynamic-website-development/">
-        <div class="svc-row-main"><h3>Dynamic Websites &amp; Web Apps</h3><p>Portals, e-commerce, and platforms with logins and payments.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/static-website-development/">
-        <div class="svc-row-main"><h3>Static Websites</h3><p>Fast, SEO-first marketing sites that turn visitors into enquiries.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#data-engineering">
-        <div class="svc-row-main"><h3>Data Engineering &amp; BI</h3><p>Power BI and Tableau dashboards on clean, automated pipelines.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#ai-seo">
-        <div class="svc-row-main"><h3>AI SEO &amp; LLM Visibility</h3><p>Rank on Google and get cited by ChatGPT and Perplexity.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#digital-marketing">
-        <div class="svc-row-main"><h3>Digital Marketing &amp; Growth</h3><p>Campaigns measured on pipeline, not impressions.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="svc-row" href="/services/#cloud-devops">
-        <div class="svc-row-main"><h3>Cloud &amp; DevOps</h3><p>The infrastructure your product and AI run on, kept healthy.</p></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <p class="l-label"><b>05</b> Stack</p>
+    <h2 class="l-title">Modern technology. Practical engineering.</h2>
+    <p class="l-intro">Mainstream, battle-tested tools — chosen so any competent team could take over your codebase. That's how lock-in is avoided.</p>
+    <div class="tech-grid">
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg><span>OpenAI</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg><span>Anthropic</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg><span>AWS</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>React</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span>Next.js</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg><span>Python</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg><span>LangGraph</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg><span>LangChain</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg><span>PostgreSQL</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg><span>Supabase</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg><span>Docker</span></div>
+      <div class="tech-cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><span>Kubernetes</span></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section section-tinted">
+<!-- ============ HOW WE WORK ============ -->
+<section class="l-section">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>Frequently asked questions</h2>
-      <p class="lead">Straight answers to the questions we hear most. Anything else — just ask on the free call.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-0">How can you build an MVP in just 15 days? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-0"><div class="faq-a-inner">We combine ruthless scoping (one core flow, nothing else), a proven modern stack, managed services for auth/payments/email instead of building from scratch, and AI-accelerated development reviewed by senior engineers. The 15 days covers scoping, design, build, hardening, and launch to a live domain.</div></div>
-      </div>
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1">Do I need a static website or a dynamic web application? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-1"><div class="faq-a-inner">If your site's job is to inform and convert visitors (company site, landing page, portfolio), a static website is faster, cheaper, more secure, and better for SEO. If users need to log in, pay, book, or see personalized data, you need a dynamic web application. On our free call we'll tell you honestly which one fits — including when the cheaper option is right.</div></div>
-      </div>
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">How much does a website or MVP cost? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-2"><div class="faq-a-inner">Every project is quoted fixed-price after a free scoping call, so you know the exact cost before we start. Static websites are the most affordable tier, dynamic web applications are priced by feature scope, and 15-day MVPs are a fixed-price package. No hourly billing, no surprise invoices.</div></div>
-      </div>
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">What happens after launch? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-3"><div class="faq-a-inner">Every build includes 30 days of post-launch support: bug fixes, small tweaks, and guidance. After that you can maintain it yourself (you own 100% of the code), or continue with an optional maintenance or growth plan covering updates, SEO, and marketing.</div></div>
-      </div>
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">Do you work with non-technical founders? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-4"><div class="faq-a-inner">Most of our clients are non-technical. We handle everything technical — domains, hosting, code, deployment — and explain decisions in plain language. You own all accounts and all code from day one.</div></div>
-      </div>
-      <div class="faq-item border-glow card-gradient">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">What is AI SEO / LLM visibility? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="faq-a" id="faq-a-5"><div class="faq-a-inner">Beyond ranking on Google, we optimize your site to be discovered and cited by AI assistants like ChatGPT, Claude, and Perplexity — where a growing share of buying research now happens. This includes structured data, llms.txt, AI-crawler-friendly configuration, and content written to be quoted by answer engines.</div></div>
+    <p class="l-label"><b>06</b> Process</p>
+    <h2 class="l-title">From idea to production.</h2>
+    <div class="steps-line-wrap">
+      <div class="l-steps">
+      <div class="l-step"><div class="l-step-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><span class="l-step-num">01</span><h3>Discover</h3><p>Goals, constraints, and where AI genuinely pays off — mapped in the first call.</p></div>
+      <div class="l-step"><div class="l-step-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><span class="l-step-num">02</span><h3>Design</h3><p>User flows, data model, and architecture agreed before a line of code.</p></div>
+      <div class="l-step"><div class="l-step-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><span class="l-step-num">03</span><h3>Build</h3><p>Shipped to a live URL from week one. You watch progress daily.</p></div>
+      <div class="l-step"><div class="l-step-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><span class="l-step-num">04</span><h3>Deploy</h3><p>Production launch with monitoring, evals, and rollback paths in place.</p></div>
+      <div class="l-step"><div class="l-step-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><span class="l-step-num">05</span><h3>Scale</h3><p>Measure, harden, extend — 30 days of support included in every build.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Simple CTA -->
-<section class="final-cta">
+<!-- ============ METRICS ============ -->
+<!-- These figures mirror the commitments published across this site.
+     Edit the data-count-to values + labels here to update them. -->
+<section class="l-metrics" aria-label="Delivery commitments">
+  <div class="container l-metrics-grid">
+    <div class="l-metric"><b><span data-count-to="15">0</span><sup>days</sup></b><span>Idea to a launched MVP</span></div>
+    <div class="l-metric"><b><span data-count-to="7">0</span><sup>days</sup></b><span>To a live business website</span></div>
+    <div class="l-metric"><b><span data-count-to="18">0</span><sup>live</sup></b><span>Interactive product demos published</span></div>
+    <div class="l-metric"><b><span data-count-to="100">0</span><sup>%</sup></b><span>Code &amp; account ownership stays with you</span></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / TEAM ============ -->
+<section class="l-section">
+  <div class="container l-center">
+    <p class="l-label"><b>07</b> The team</p>
+    <h2 class="l-title">Senior engineers, no bench</h2>
+    <div class="team-stage reveal">
+      <svg class="team-svg" viewBox="0 0 640 240" role="img" aria-label="A small senior team connected to AI, software, cloud, data and automation"><path class="link draw" d="M250 96 C 250 140, 69.5 150, 69.5 186"/><path class="link draw" d="M320 96 C 320 140, 204 150, 204 186"/><path class="link draw" d="M390 96 C 390 140, 328.75 150, 328.75 186"/><path class="link draw" d="M250 96 C 250 140, 449 150, 449 186"/><path class="link draw" d="M320 96 C 320 140, 571.5 150, 571.5 186"/><circle class="person-head" cx="250" cy="50" r="11"/><path class="person-body" d="M233 80 a17 14 0 0 1 34 0z"/><circle class="person-ring" cx="320" cy="52" r="30"/><circle class="person-head" cx="320" cy="46" r="11"/><path class="person-body" d="M303 76 a17 14 0 0 1 34 0z"/><circle class="person-head" cx="390" cy="50" r="11"/><path class="person-body" d="M373 80 a17 14 0 0 1 34 0z"/><rect class="cap-box" x="40" y="186" width="59" height="34" rx="8"/><text class="cap-label" x="69.5" y="207.5" text-anchor="middle">AI</text><rect class="cap-box" x="152" y="186" width="104" height="34" rx="8"/><text class="cap-label" x="204" y="207.5" text-anchor="middle">SOFTWARE</text><rect class="cap-box" x="288" y="186" width="81.5" height="34" rx="8"/><text class="cap-label" x="328.75" y="207.5" text-anchor="middle">CLOUD</text><rect class="cap-box" x="412" y="186" width="74" height="34" rx="8"/><text class="cap-label" x="449" y="207.5" text-anchor="middle">DATA</text><rect class="cap-box" x="512" y="186" width="119" height="34" rx="8"/><text class="cap-label" x="571.5" y="207.5" text-anchor="middle">AUTOMATION</text></svg>
+    </div>
+    <p class="team-copy">The people on your first call are the people who build your system — a small distributed team across India covering AI, software, cloud, data and automation. We explain decisions in plain language, ship in the open, and hand over everything.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="l-final">
   <div class="container">
-    <h2>Tell us what you're trying to build.</h2>
-    <p>One conversation. An honest assessment, a recommended approach, and a fixed-price quote within 24 hours — free, no strings.</p>
-    <a class="btn btn-hero btn-xl" href="/contact/">Book a free consultation</a>
+    <svg class="l-final-arrow" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v30"/><path d="m5 26 7 7 7-7"/></svg>
+    <h2>Ready to build what's next?</h2>
+    <p>Tell us what you're trying to build. We'll help you turn it into reality — starting with a free, genuinely useful conversation.</p>
+    <a class="l-btn l-btn-primary" href="/contact/">Let's talk <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     <p class="mail-line">Prefer email? <a href="mailto:sales@synaptro.in">sales@synaptro.in</a></p>
   </div>
 </section>
